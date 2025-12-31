@@ -9,6 +9,8 @@
         "Форрест Гамп", "Криминальное чтиво", "Побег из Шоушенка", "Список Шиндлера", "Американский психопат",
         "Американская история X", "Назад в будущее", "Бойцовский клуб", "Крестный отец", "Старикам тут нее место"
     };
+
+    var random = new Random();
 }
 
 <div class="text-center">
@@ -24,12 +26,12 @@
         @for (int i = 0; i < numberOfRows; i++)
         {
             <tr>
-                <td>ID</td>
-                <td>Название</td>
+                <td>@(i + 1)</td>
+                <td>@typeOfEntertainment[random.Next(typeOfEntertainment.Length)]</td>
                 <td>Описание</td>
                 <td>Цена за штуку</td>
                 <td>Количество</td>
-                <td>Действие</td>
+                <td>✎⌫</td>
             </tr>
         }
     </table>
