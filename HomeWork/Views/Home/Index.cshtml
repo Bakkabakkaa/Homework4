@@ -1,8 +1,28 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var numberOfRows = 20;
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Цена за штуку</th>
+            <th>Количество</th>
+            <th>Действие</th>
+        </tr>
+        @for (int i = 0; i < numberOfRows; i++)
+        {
+            <tr>
+                <td>ID</td>
+                <td>Название</td>
+                <td>Описание</td>
+                <td>Цена за штуку</td>
+                <td>Количество</td>
+                <td>Действие</td>
+            </tr>
+        }
+    </table>
 </div>
