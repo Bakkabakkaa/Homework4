@@ -11,6 +11,7 @@
     };
 
     var random = new Random();
+    string selectedType = null;
 }
 
 <div class="text-center">
@@ -27,8 +28,8 @@
         {
             <tr>
                 <td>@(i + 1)</td>
-                <td>@typeOfEntertainment[random.Next(typeOfEntertainment.Length)]</td>
-                <td>Описание</td>
+                <td>@(selectedType = typeOfEntertainment[random.Next(typeOfEntertainment.Length)])</td>
+                <td>@GetRandom(selectedType)</td>
                 <td>Цена за штуку</td>
                 <td>Количество</td>
                 <td>✎⌫</td>
@@ -36,3 +37,23 @@
         }
     </table>
 </div>
+
+@{
+    string GetRandom(string Type)
+    {
+        if (Type == "Книга")
+        {
+            return nameOfBooks[random.Next(nameOfBooks.Length)];
+        }
+        else if (Type == "Фильм")
+        {
+            return nameOfFilms[random.Next(nameOfFilms.Length)];
+        }
+        else if (Type == "Игра")
+        {
+            return nameOfTheGames[random.Next(nameOfTheGames.Length)];
+        }
+
+        return "Пусто";
+    }
+}
