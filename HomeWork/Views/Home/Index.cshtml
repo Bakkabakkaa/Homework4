@@ -30,8 +30,8 @@
                 <td>@(i + 1)</td>
                 <td>@(selectedType = typeOfEntertainment[random.Next(typeOfEntertainment.Length)])</td>
                 <td>@GetRandom(selectedType)</td>
-                <td>Цена за штуку</td>
-                <td>Количество</td>
+                <td>@(random.Next(1, 31) * 100)</td>
+                <td>@(random.Next(100))</td>
                 <td>✎⌫</td>
             </tr>
         }
